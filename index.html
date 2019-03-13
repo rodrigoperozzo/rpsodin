@@ -1,0 +1,95 @@
+<!-- ROCK PAPER SCISSORS
+    '' 0 - ROCK | 1 - PAPER | 2 - SCISSORS --> 
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Rock Paper Scissors
+    </title>
+
+</head>
+
+<body>
+    
+    <script>
+
+        let rpsOptions = ["rock", "paper", "scissors"];
+
+        function computerPlay(){
+            let = selec = Math.floor(Math.random() * 3)
+            if (selec == 0){
+                return "rock";
+            }
+
+            else if (selec == 1){
+                return "paper";
+            }
+
+            else {
+                return "scissors";
+            }
+        }
+
+        function playerPlay(){
+            let playerselec = prompt("Select your play: Rock, Paper or Scissors.");
+            playerselec = playerselec.toLowerCase();
+            
+            while (!rpsOptions.includes(playerselec)){
+                console.log("Choose a valid input play, homie.");
+                playerselec = prompt("Select your play: Rock, Paper or Scissors.");
+                playerselec = playerselec.toLowerCase();
+            }
+
+            return playerselec;
+
+        }
+
+        function singleRound(){
+            let compChoice = computerPlay();
+            let playerChoice = playerPlay();
+
+            if (compChoice == "rock"){
+                switch (playerChoice){
+                    case "rock":
+                        return "It is a draw. \nRock hard!";
+                    
+                    case "paper":
+                        return "HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Paper beats Rock.";
+
+                    case "scissors":
+                        return "It is the new machine age. Nowhere to hide, big brother is watching you. \nRock beats Scissors."
+                }
+            }
+
+            if (compChoice == "paper"){
+                switch (playerChoice){
+                    case "rock":
+                        return "It is the new machine age. Nowhere to hide, big brother is watching you. \nPaper beats Rock.";
+                    
+                    case "paper":
+                        return "It is a draw. \nPaper and Paper. Boring.";
+
+                    case "scissors":
+                        return "HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Scissors beats Paper."
+                }
+            }
+
+            if (compChoice == "scissors"){
+                switch (playerChoice){
+                    case "rock":
+                        return "HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Rock beats Scissors.";
+                    
+                    case "paper":
+                        return "It is the new machine age. Nowhere to hide, big brother is watching you. \nScissors beats Paper.";
+
+                    case "scissors":
+                        return "It is a draw. \n*PLIM* Scissors and Scissors."
+                }
+            }
+        }
+
+    </script>
+
+</body>
