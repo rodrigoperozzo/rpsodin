@@ -53,43 +53,81 @@
             if (compChoice == "rock"){
                 switch (playerChoice){
                     case "rock":
-                        return "It is a draw. \nRock hard!";
+                        console.log("It is a draw. \nRock hard!");
+                        return "draw";
                     
                     case "paper":
-                        return "HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Paper beats Rock.";
+                        console.log("HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Paper beats Rock.");
+                        return "player";
 
                     case "scissors":
-                        return "It is the new machine age. Nowhere to hide, big brother is watching you. \nRock beats Scissors."
+                        console.log("It is the new machine age. Nowhere to hide, big brother is watching you. \nRock beats Scissors.");
+                        return "computer";
                 }
             }
 
             if (compChoice == "paper"){
                 switch (playerChoice){
                     case "rock":
-                        return "It is the new machine age. Nowhere to hide, big brother is watching you. \nPaper beats Rock.";
+                        console.log("It is the new machine age. Nowhere to hide, big brother is watching you. \nPaper beats Rock.");
+                        return "computer";
                     
                     case "paper":
-                        return "It is a draw. \nPaper and Paper. Boring.";
+                        console.log("It is a draw. \nPaper and Paper. Boring.");
+                        return "draw";
 
                     case "scissors":
-                        return "HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Scissors beats Paper."
+                        console.log("HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Scissors beats Paper.");
+                        return "player";
                 }
             }
 
             if (compChoice == "scissors"){
                 switch (playerChoice){
                     case "rock":
-                        return "HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Rock beats Scissors.";
+                        console.log("HELL YEAH PLAYER WON! GOAT 2ez4player fck noobs \nBy the way, Rock beats Scissors.");
+                        return "player";
                     
                     case "paper":
-                        return "It is the new machine age. Nowhere to hide, big brother is watching you. \nScissors beats Paper.";
+                        console.log("It is the new machine age. Nowhere to hide, big brother is watching you. \nScissors beats Paper.");
+                        return "computer";
 
                     case "scissors":
-                        return "It is a draw. \n*PLIM* Scissors and Scissors."
+                        console.log("It is a draw. \n*PLIM* Scissors and Scissors.");
+                        return "draw";
                 }
             }
         }
 
+        function game(){
+            let count = 0;
+            let player = 0;
+            let computer = 0;
+
+            for (count = 0; count < 4; count++){
+                console.log(count);
+                console.log(player, computer);
+                let result = singleRound();
+                if (result == "computer"){
+                    computer++;
+                }
+                else if (result == "player"){
+                    player++;
+                }
+            }
+
+            if (player > computer){
+                console.log("Player won. That's cool... yea, kind of. Yup, cool.");
+            }
+            else if (computer > player){
+                console.log("BEEP BOP computer won. Pretty lame, isn't it?");
+            }
+            else {
+                console.log("Draw. BORING.");
+            }
+        
+        }
+    
     </script>
 
 </body>
